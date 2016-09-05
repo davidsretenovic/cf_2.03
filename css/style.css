@@ -1,0 +1,495 @@
+/* body generics */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: lightgray;
+  position: relative;
+  /* padding-top: 3.125em; original */
+  padding-top: 2em;
+}
+
+.wrapper {
+  border: white solid 3px;
+  padding: 5%;
+  margin-bottom: 5%;
+}
+
+[class*="col-"] {
+  margin-bottom: 0.9375em;
+}
+
+.anchor {
+  padding-top: 10vh;
+}
+
+/* vertical viewport sizing */ 
+/* #home, #about, #portfolio, #faq {
+  height: 90vh;
+} */
+
+#home-wrapper {
+  height: 90vh;
+  margin-left: -0.9375em;
+  margin-right: -0.9375em;
+}
+
+#contact-wrapper {
+  height: 100vh;
+  /* padding-bottom: 2%; */
+}
+
+/*==========  Mobile First Method  ==========*/
+
+/* Custom, iPhone Retina */ 
+@media only screen and (min-width : 320px) {
+  #about {
+    background-color: blue;
+    border-bottom: white solid 3px;
+    height: 100%;
+    padding-bottom: 3em;
+  }
+  #work > [class*="col-"] {
+    height: 12%;
+  }
+  #contact-wrapper {
+    height: 100%;
+  }
+}
+
+/* Extra Small Devices, Phones */ 
+@media only screen and (min-width : 480px) {
+  #about {
+    background-color: red;
+    border-bottom: white solid 3px;
+    height: 100%;
+    padding-bottom: 3em;
+  }
+  #work > [class*="col-"] {
+    height: 12%;
+  }
+  #contact-wrapper {
+    height: 100%;
+  }
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+  #about {
+    background-color: green;
+    border-bottom: white solid 3px;
+    height: 100%;
+    padding-bottom: 3em;
+  }
+  #work > [class*="col-"] {
+    height: 20%;
+  }
+  #contact-wrapper {
+    height: 100%;
+  }
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+  #about {
+    background-color: palegreen;
+    border-bottom: white solid 3px;
+    height: 95vh;
+    padding-bottom: 3em;
+  }
+  #work > [class*="col-"] {
+    height: 25%;
+  }
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+  #work > [class*="col-"] {
+    height: 50%;
+  }
+}
+
+/* navbar */
+
+.nav > li > a:hover {
+  color: rebeccapurple !important;
+  transition: color 2s;
+  -webkit-transition:  color 2s; /* Safari */
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: bold; 
+} 
+
+/* home */
+#home {
+  background-color: palegoldenrod;
+  border-bottom: white solid 3px;
+}
+
+#mycarousel {
+  padding-top: 1.25em;
+  margin-left: -0.9375em;
+  margin-right: -0.9375em;
+}
+
+.item {
+    height: 37.5em;
+}
+
+.carousel-caption {
+    float: left;
+    position: absolute;
+    padding-bottom: 28.125em;
+    z-index: 0;
+}
+
+/* about */
+/* #about {
+  background-color: palegreen;
+  border-bottom: white solid 3px;
+  height: 100vh;
+} */
+
+#about > [class*="row"] {
+  margin: 0 auto;
+  width: 80%;
+  border: white solid 3px;
+}
+
+.flex-container {
+  margin: 0 auto;
+  display: -webkit-flex; /* Safari */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 80%;
+  height: 90%;
+  border: white solid 3px;
+}
+
+.flex-item-1,
+.flex-item-2,
+.flex-item-3 {
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
+.flex-item-1 {
+  background-color: red;
+  order: 1;
+}
+
+.flex-item-2 {
+  background-color: green;
+  order: 2;
+}
+
+.flex-item-3 {
+  background-color: blue;
+  order: 3;
+}
+
+.flex-item-4 {
+  order: 4;
+  flex-grow:1;
+  flex-shrink: 0;
+  flex-basis: 100%;
+  background-color: purple;
+}
+
+/* portfolio */
+#portfolio {
+  background-color: paleturquoise;
+  border-bottom: white solid 3px;
+}
+
+/* TODO: find out why the border doesn't fit the content on all media sizes */
+#work {
+  width: 90%;
+  height: 80%;
+  margin: 0 auto;
+  /* border: white solid 3px; */
+}
+
+/* TODO: i believe this interferes with 100vh, possibly should be media query */
+/* #work > [class*="col-"] {
+  height: 20%;
+} */
+
+#work > #proj-1 {
+  color: mediumseagreen;
+  text-anchor: end;
+  background-image: url("../img/proj/github.png");
+  background-attachment: local;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat; 
+}
+
+#work > #proj-2 {
+  color: lightcoral;
+  background-image: url("../img/proj/calculator.jpg");
+  background-attachment: local;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat; 
+}
+
+#work > #proj-3 {
+  color: lightyellow;
+  background-image: url("../img/proj/powershell.png");
+  background-attachment: local;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat; 
+}
+
+#work > #proj-4 {
+  background-color: lavenderblush;
+}
+
+#work > #proj-5 {
+  background-color: plum;
+}
+
+#work > #proj-6 {
+  background-color: lemonchiffon;
+}
+
+#work > #proj-7 {
+  background-color: lightblue;
+}
+
+#work > #proj-8 {
+  background-color: red;
+}
+
+/* faq */
+#faq {
+  background-color: lightpink;
+  border-bottom: white solid 3px;
+  /* padding-bottom: 3em; done at wrapper level */
+}
+
+/* unused, as the video embed wrecks the vh height of the faq page, and the accordion */ 
+/* #resp-video {
+  margin: 0 auto;
+  max-width: 45%; 
+  max-height: 50%;
+  padding: 10%;
+  border: white solid 3px;
+} */
+
+/* TODO: find out why in 320px view this overlaps with the contact page */
+
+#accordion {
+  padding-top: 1em; /*was 3em */
+  height: 95%;
+  width: 80%;
+  margin: 0 auto !important;
+}
+
+#headingOne,
+#headingTwo,
+#headingThree,
+#headingFour,
+#headingFive {
+  background-color: gray;
+}
+
+.panel,
+.panel-body {
+    border-style: none;
+    border-width: 0;
+}
+
+.panel-default {
+    background-color: lightgray;
+    border-style: none;
+    border-width: 0;
+}
+
+/* contact */
+#contact {
+  /* background-color: lightgray; */
+  background-image: url("../img/splash_desertwalk.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+
+/* unnecessary 
+#contact-wrapper {
+  width: 85%;
+  margin: 2% auto 5% auto;
+  padding-bottom: 2%;
+} */
+
+#contact-title {
+  border: rebeccapurple solid 3px;
+  /* width: 50%; */
+}
+
+#contact-details {
+  border: cornflowerblue solid 3px;
+  /* width: 50%; */
+  padding-top: 1%;
+  margin-top: 1%;
+}
+
+.contact-info {
+  padding-right: 2%;
+}
+
+/* contact form */
+
+#contact-form {
+  padding-left: 5%;
+  width: 80%;
+}
+
+form {
+  margin: 0 auto;
+  /* width: 80%; */
+  padding-top: 1%;
+  padding-bottom: 2%;
+}
+
+/* footer */
+
+footer {
+  background-color: black;
+  color: rebeccapurple !important;
+  transition: color 2s;
+  -webkit-transition:  color 2s; /* Safari */
+}
+
+/* social media icons in footer */
+
+.social {
+  color: white;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
+.social-icons {
+  position: relative;
+  /* float: clear; */
+  /* max-inline-size: 10%; */
+  height: 1.625em;
+  width: 1.625em;
+  margin: 0 auto;
+  -webkit-transition: all ease 0.3s;
+  -moz-transition: all ease 0.3s;
+  -o-transition: all ease 0.3s;
+  -ms-transition: all ease 0.3s;
+  transition: all ease 0.3s;
+  background-size: cover;
+}
+
+.fb {
+  background-image: url('../img/social/facebook-hover.png');
+}
+
+.fb:hover {
+  background-position: 0em -1.625em;
+  box-shadow: 0em 0em 0.25em 0.0625em rgba(0,0,0,0.8);
+}
+
+.inst {
+  background-image: url('../img/social/instagram-hover.png');
+}
+
+.inst:hover {
+  background-position: 0em -1.625em;
+  box-shadow: 0em 0em 0.25em 0.0625em rgba(0,0,0,0.8);
+}
+
+.tw {
+  background-image: url('../img/social/twitter-hover.png');
+}
+
+.tw:hover {
+  background-position: 0em -1.625em;
+  box-shadow: 0em 0em 0.25em 0.0625em rgba(0,0,0,0.8);
+}
+
+/* Typography */
+
+* {
+  font-family: 'Lato', 'Helvetica', 'Arial, sans-serif'
+}
+
+/* typography: navigation */
+.navbar-brand {
+  font-family: 'Lato', 'Helvetica', 'Arial', 'sans-serif';
+  font-weight: 400;
+  text-transform: uppercase;
+  color: white;
+  letter-spacing: 0.1em;
+}
+
+.name a {
+  font-family: 'Lato', 'Helvetica', 'Arial', 'sans-serif';
+  font-weight: 400;
+  text-transform: uppercase;
+  color: white;
+  letter-spacing: 0.1em;
+}
+
+.nav a {
+  font-family: 'Lato', 'Helvetica', 'Arial', 'sans-serif';
+  font-weight: 400;
+  text-transform: lowercase;
+  letter-spacing: 0.05em;
+}
+
+/* typography: footer */
+footer h4 {
+  font-family: 'Lato', 'Helvetica', 'Arial', 'sans-serif';
+  font-weight: 400;
+  color: white;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+
+/* typography: faq */
+.faq h1 {
+    font-family: 'Lato','Helvetica','sans-serif';
+    font-weight: 900;
+    text-align: center;
+    color: mediumpurple;
+}
+
+.panel-body {
+    font-family: 'Lato','Helvetica','sans-serif';
+}
+
+.panel-title a {
+    color: rebeccapurple;
+    font-family: 'Lato','Helvetica','sans-serif';
+    font-weight: 400;
+}
+
+.carousel-caption h3 {
+    font-family: 'Lato','Helvetica','sans-serif';
+    font-weight: 700;
+    color: mediumpurple;
+    font-style: bold;
+}
+
+.carousel-caption p {
+    font-family: 'Lato','Helvetica','sans-serif';
+    font-weight: 400;
+    color: black;
+}
